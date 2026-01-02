@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <h1 id="game-title">谿山行旅</h1>
+
+    <div class="status-bar">
+        <div>目前位置：<span id="current-location">準備出發</span></div>
+        <div>領悟次數：<span id="total-steps">0</span></div>
+    </div>
+
+    <div class="main-layout">
+        <div class="game-container">
+            <div class="board-grid">
+                <div class="cell active" data-path-index="0"><div class="player-token"></div><div class="cell-icon">⛰️</div><div>山腳起點</div><div class="seal-tag">啟程</div></div>
+                <div class="cell" data-path-index="1"><div class="player-token"></div><div class="cell-icon">👤</div><div>性緩為寬</div><div class="seal-tag">本名</div></div>
+                <div class="cell" data-path-index="2"><div class="player-token"></div><div class="cell-icon">📜</div><div>師法造化</div><div class="seal-tag">哲學</div></div>
+                <div class="cell" data-path-index="3"><div class="player-token"></div><div class="cell-icon">🏠</div><div>終南太華</div><div class="seal-tag">隱居</div></div>
+                <div class="cell" data-path-index="4"><div class="player-token"></div><div class="cell-icon">🔍</div><div>隱藏簽名</div><div class="seal-tag">細節</div></div>
+
+                <div class="cell" data-path-index="15"><div class="player-token"></div><div class="cell-icon">🏆</div><div>代表形象</div><div class="seal-tag">巔峰</div></div>
+                
+                <div class="center-panel">
+                    <div class="zoom-overlay" id="zoomTag">🔍 局部觀察</div>
+                    <div class="symbolic-scroll" id="mainArt">
+                        <div class="scroll-peak">⛰️</div> <div class="scroll-mist">🌫️🌫️🌫️</div> <div class="scroll-temple">⛩️</div> <div class="scroll-base">🪨🪨</div> <div class="scroll-travelers">🐴🚶</div> <div class="scroll-signature">范寬</div>
+                    </div>
+                </div>
+
+                <div class="cell" data-path-index="5"><div class="player-token"></div><div class="cell-icon">📐</div><div>三段構圖</div><div class="seal-tag">空間</div></div>
+
+                <div class="cell" data-path-index="14"><div class="player-token"></div><div class="cell-icon">📕</div><div>石渠寶笈</div><div class="seal-tag">著錄</div></div>
+                <div class="cell" data-path-index="6"><div class="player-token"></div><div class="cell-icon">🐴</div><div>車馬行旅</div><div class="seal-tag">細節</div></div>
+
+                <div class="cell" data-path-index="13"><div class="player-token"></div><div class="cell-icon">🔴</div><div>忠孝之家</div><div class="seal-tag">流傳</div></div>
+                <div class="cell" data-path-index="7"><div class="player-token"></div><div class="cell-icon">⛩️</div><div>山門蘭若</div><div class="seal-tag">細節</div></div>
+
+                <div class="cell" data-path-index="12"><div class="player-token"></div><div class="cell-icon">✒️</div><div>董其昌題</div><div class="seal-tag">鑑定</div></div>
+                <div class="cell" data-path-index="11"><div class="player-token"></div><div class="cell-icon">🌟</div><div>北宋三家</div><div class="seal-tag">地位</div></div>
+                <div class="cell" data-path-index="10"><div class="player-token"></div><div class="cell-icon">🪨</div><div>寫山真骨</div><div class="seal-tag">風骨</div></div>
+                <div class="cell" data-path-index="9"><div class="player-token"></div><div class="cell-icon">🌫️</div><div>雲霧繚繞</div><div class="seal-tag">墨色</div></div>
+                <div class="cell" data-path-index="8"><div class="player-token"></div><div class="cell-icon">🖌️</div><div>筆勢雄厚</div><div class="seal-tag">技法</div></div>
+            </div>
+        </div>
+
+        <div class="collection-box">
+            <div class="box-title">典藏印</div>
+            <div class="seal-slot" id="seal-signature"><span>范寬</span></div>
+            <div class="seal-slot" id="seal-dong"><span>董其昌</span></div>
+            <div class="seal-slot" id="seal-family"><span>忠孝</span></div>
+            <div class="seal-slot" id="seal-palace"><span>石渠</span></div>
+        </div>
+    </div>
+
+    <div class="log-container">
+        <div class="log-header">📜 行旅路誌</div>
+        <ul class="log-area" id="gameLog">
+            <li>> 范寬帶您進入大山大水之旅...</li>
+        </ul>
+    </div>
+
+    <div class="controls-area">
+        <button class="dice-btn" id="rollBtn">擲骰前行 <span id="dice-result">(?)</span></button>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">標題</h2>
+            <p id="modalBody">內容</p>
+            <button class="close-btn" onclick="closeModal()">了解</button>
+        </div>
+    </div>
+
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap');
+
+:root { --bg: #f8f3ea; --accent: #a83232; --ink: #3d2d1e; }
+
+body { font-family: 'Noto Serif TC', serif; background: var(--bg); display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
+
+#game-title { font-size: 2.8rem; letter-spacing: 15px; color: var(--ink); margin-bottom: 15px; }
+
+.status-bar { width: 580px; display: flex; justify-content: space-between; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+
+.main-layout { display: flex; gap: 20px; }
+
+.game-container { background: #c5b8a5; padding: 12px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+.board-grid { display: grid; grid-template-columns: repeat(5, 110px); grid-template-rows: repeat(5, 110px); gap: 8px; }
+
+.cell { background: #fff; border: 1px solid #b5a48f; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.8rem; position: relative; transition: 0.2s; overflow: hidden; }
+.cell.active { border: 3px solid var(--accent); background: #fffced; }
+
+.cell-icon { font-size: 1.8rem; margin-bottom: 3px; }
+
+.player-token { position: absolute; top: 6px; left: 6px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 2px solid #fff; display: none; z-index: 50; }
+.cell.active .player-token { display: block; }
+
+.seal-tag { font-size: 0.6rem; color: var(--accent); border: 1px solid var(--accent); padding: 0 3px; }
+
+/* 中央意象區域 - 雄偉化與至中 */
+.center-panel { 
+    grid-column: 2 / span 3; grid-row: 2 / span 3; 
+    background: #e6ddd0; position: relative; overflow: hidden;
+    border: 2px solid #8e7e6a; display: flex; justify-content: center; align-items: center;
+}
+
+.symbolic-scroll {
+    width: 100%; height: 100%; position: relative;
+    display: flex; justify-content: center; align-items: center;
+    transition: transform 0.8s ease-in-out;
+}
+
+.scroll-peak { font-size: 220px; opacity: 0.8; filter: grayscale(100%); margin-top: -50px; }
+.scroll-mist { position: absolute; top: 55%; font-size: 40px; opacity: 0.4; width: 100%; text-align: center; }
+.scroll-base { position: absolute; bottom: 0; font-size: 80px; opacity: 0.6; }
+.scroll-temple { position: absolute; top: 60%; left: 15%; font-size: 30px; }
+.scroll-travelers { position: absolute; bottom: 12%; right: 20%; font-size: 25px; }
+.scroll-signature { position: absolute; bottom: 10%; right: 8%; color: var(--accent); border: 1px solid var(--accent); padding: 1px; writing-mode: vertical-rl; font-size: 10px; }
+
+.zoom-overlay { position: absolute; top: 10px; left: 10px; background: var(--accent); color: #fff; padding: 4px 10px; font-size: 0.75rem; border-radius: 20px; z-index: 100; display: none; }
+
+/* 印章與日誌區 */
+.collection-box { width: 110px; display: flex; flex-direction: column; gap: 10px; }
+.box-title { font-weight: bold; text-align: center; border-bottom: 2px solid var(--ink); padding-bottom: 5px; }
+.seal-slot { height: 50px; background: #fff; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #ddd; }
+.seal-slot.collected { border: 2px solid var(--accent); color: var(--accent); font-weight: bold; background: #fff5f5; }
+
+.log-container { width: 580px; margin-top: 20px; background: #fff; border: 1px solid #ccc; }
+.log-header { background: var(--ink); color: #fff; padding: 5px 12px; font-size: 0.85rem; }
+.log-area { height: 100px; margin: 0; padding: 10px; list-style: none; font-size: 0.85rem; overflow-y: auto; }
+.log-area li { border-bottom: 1px solid #eee; padding: 2px 0; }
+
+.dice-btn { margin-top: 20px; background: var(--ink); color: #fff; border: none; padding: 12px 60px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; }
+
+/* 彈窗：確保層級最高 */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999; justify-content: center; align-items: center; }
+.modal-content { background: #fff; padding: 30px; border-left: 10px solid var(--accent); max-width: 320px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.close-btn { margin-top: 20px; width: 100%; background: var(--ink); color: #fff; border: none; padding: 10px; cursor: pointer; }
